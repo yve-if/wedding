@@ -6,7 +6,7 @@ export const data = {
             child: 'Putra kedua',
             father: 'Budi Supanto',
             mother: 'Murtini',
-            image: './src/assets/images/cowo.png'
+            image: '/images/cowo.png'
         },
         P: {
             id: 2,
@@ -14,10 +14,10 @@ export const data = {
             child: 'Putri ketiga',
             father: '(Alm)Slimin',
             mother: 'Suti Adi Utami',
-            image: './src/assets/images/cewe.png'
+            image: '/images/cewe.png'
         },
 
-        couple: './src/assets/images/couple.png'
+        couple: '/images/couple.png'
     },
 
     time: {
@@ -52,23 +52,23 @@ export const data = {
     galeri: [
         {
             id: 1,
-            image: './src/assets/images/1.png'
+            image: '/images/1.png'
         },
         {
             id: 2,
-            image: './src/assets/images/2.png'
+            image: '/images/2.png'
         },
         {
             id: 3,
-            image: './src/assets/images/3.png'
+            image: '/images/3.png'
         },
         {
             id: 4,
-            image: './src/assets/images/4.png'
+            image: '/images/4.png'
         },
         {
             id: 5,
-            image: './src/assets/images/5.png'
+            image: '/images/5.png'
         }
     ],
 
@@ -76,18 +76,18 @@ export const data = {
         {
             id: 1,
             name: 'Dwi Wasono',
-            icon: './src/assets/images/bca.png',
+            icon: '/images/bca.png',
             rekening: '12345678'
         },
         {
             id: 2,
             name: 'Ayu Rohmmana Ainun',
-            icon: './src/assets/images/bri.png',
+            icon: '/images/bri.png',
             rekening: '12345678'
         },
     ],
 
-    audio: './src/assets/audio/wedding.mp3',
+    audio: '/audio/wedding.mp3',
 
     api: 'https://script.google.com/macros/s/AKfycbz5V1r7ivvutiAkBg50dT4mo1d5gh_eII6euUkSfCmodr_Le484TmmHlgDJbYaJ0uj-/exec',
 
