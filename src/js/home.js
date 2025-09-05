@@ -1,4 +1,4 @@
-import {data} from "../assets/data/data.js";
+import {data} from "/data/data.js";
 import {monthNameToNumber} from "../utils/helper.js";
 
 export const home = () => {
