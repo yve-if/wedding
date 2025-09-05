@@ -1,4 +1,4 @@
-import {data} from "/data/data.js";
+import {data} from "../assets/data/data.js";
 import {renderElement} from "../utils/helper.js";
 
 export const navbar = () => {
