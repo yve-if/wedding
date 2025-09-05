@@ -1,4 +1,4 @@
-import { data } from "/data/data.js";
+import { data } from "../assets/data/data.js";
 
 export const time = () => {
     const timeContainer = document.querySelector('.time');
