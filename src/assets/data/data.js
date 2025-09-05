@@ -2,18 +2,18 @@ export const data = {
     bride: {
         L: {
             id: 1,
-            name: 'Lorem Ipsum',
-            child: 'Putra ke lorem',
-            father: 'Lorem',
-            mother: 'Ipsum',
+            name: 'Dwi Wasono',
+            child: 'Putra',
+            father: 'Budi Supanto',
+            mother: 'Murtini',
             image: './src/assets/images/cowo.png'
         },
         P: {
             id: 2,
-            name: 'Ipsum Lorem',
-            child: 'Putri ke lorem',
-            father: 'Lorem',
-            mother: 'Ipsum',
+            name: 'Ayu Rohmmana Ainun',
+            child: 'Putri',
+            father: '(Alm) Slimin',
+            mother: 'Suti Adi Utami',
             image: './src/assets/images/cewe.png'
         },
 
@@ -22,26 +22,26 @@ export const data = {
 
     time: {
         marriage: {
-            year: '2030',
-            month: 'November',
-            date: '14',
-            day: 'Kamis',
+            year: '2025',
+            month: 'Juni',
+            date: '18',
+            day: 'Rabu',
             hours: {
                 start: '08.00',
                 finish: 'Selesai'
             }
         },
         reception: {
-            year: '2024',
-            month: 'November',
-            date: '14',
-            day: 'Kamis',
+            year: '2025',
+            month: 'September',
+            date: '21',
+            day: 'Minggu',
             hours: {
                 start: '11.00',
                 finish: 'Selesai'
             }
         },
-        address: 'Kp. Lorem, RT 000/ RW 000, Desa.Lorem, Kec.Ipsum, Kab.Lorem, Lorem (1234)'
+        address: 'Jl. Mayjen Sungkono Dusun Dayu Gg. 1, RT 06 / RW 01 Tunggorono, Kec. Jombang'
     },
 
     link: {
@@ -75,13 +75,13 @@ export const data = {
     bank: [
         {
             id: 1,
-            name: 'Lorem Ipsum',
+            name: 'Dwi Wasono',
             icon: './src/assets/images/bca.png',
             rekening: '12345678'
         },
         {
             id: 2,
-            name: 'Ipsum Lorem',
+            name: 'Ayu Rohmana Ainun',
             icon: './src/assets/images/bri.png',
             rekening: '12345678'
         },
