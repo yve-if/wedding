@@ -135,6 +135,7 @@
 /* ---- List ucapan ---- */
 .wishas div:nth-of-type(3) {
     margin-top: 2rem;
+    border-radius: 15px;
     padding: 2rem 4rem;
     background: var(--surface);
     color: var(--primary-font-color);
@@ -165,6 +166,7 @@
 .wishas div:nth-of-type(3) ul li div:nth-of-type(1){
     width: 2rem;
     height: 2rem;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -203,8 +205,6 @@
 /* Pager di bawah list */
 .wishas div:nth-of-type(3) .button-grup {
     margin: 1rem auto 0;
-    border: 1px solid var(--border);
-    border-radius: 4px;
     background-color: var(--surface);
     width: fit-content;
     display: flex;
