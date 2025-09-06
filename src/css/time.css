@@ -1,82 +1,64 @@
-/* =========================
-   TIME SECTION (LIGHT/DARK CLEAN)
-   ========================= */
-
 .time {
-  width: 100%;
-  text-align: center;
-  padding: 4rem 2rem;
-  background: var(--bg-color);
-  color: var(--primary-font-color);
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    padding: 10rem 8rem;
+    position: relative;
 }
 
 .time h2 {
-  font-family: var(--sacramento);
-  font-size: var(--fontSize-heading-base);
-  font-weight: 400;
-  margin-bottom: 1rem;
+    font-family: var(--sacramento);
+    font-size: var(--fontSize-heading-base);
+    font-weight: 400;
 }
 
-.time p {
-  margin-bottom: 1rem;
-  color: var(--muted);
+.time div:nth-of-type(1) {
+    margin-top: 2rem;
 }
 
-/* kotak acara (akad, resepsi) */
-.time > div {
-  font-family: var(--sacramento);
-  font-size: var(--fontSize-heading-lg);
-  font-weight: 400;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin: 2rem auto;
-  max-width: 600px;
+.time div:nth-of-type(1) div h3 {
+    font-family: var(--sacramento);
+    font-size: var(--fontSize-heading-lg);
+    font-weight: 400;
 }
 
-.time > div > div {
-  padding: 1rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--surface);
-  color: var(--primary-font-color);
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-small);
+.time div:nth-of-type(1) div:nth-of-type(2){
+    margin-top: 2rem;
 }
 
-/* hilangkan hover “grid/zoom” bawaan */
-.time > div > div:hover {
-  transform: none;
-  box-shadow: var(--shadow-md);
+/* Lihat Google Maps: LIGHT = hitam, DARK = putih */
+.time a {
+    padding: 0.5rem 1rem;
+    color: #fff;                 /* LIGHT text */
+    font-size: 1rem;
+    background-color: #000;      /* LIGHT background */
+    margin: 2rem auto 1rem;
+    border-radius: 20px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: var(--transition-small);
+}
+.time a:hover { transform: translateY(-1px); }
+
+/* ikon ikut warna teks */
+.time a i {
+    font-size: 1.2rem;
+    color: currentColor;
 }
 
-/* tombol link google maps */
-.time a[role="link"] {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  border-radius: 20px;
-  font-size: 0.95rem;
-  border: 1px solid var(--border);
-  transition: var(--transition-small);
-  text-decoration: none;
+/* DARK override */
+[data-theme="dark"] .time a {
+    background-color: #fff;      /* DARK background */
+    color: #000;                 /* DARK text */
+    border-color: #1f2937;       /* konsisten border di dark */
 }
 
-/* mode terang: hitam */
-.time a[role="link"] {
-  background: #000;
-  color: #fff;
-}
-.time a[role="link"] i { color: currentColor; }
-
-/* mode gelap: putih */
-[data-theme="dark"] .time a[role="link"] {
-  background: #fff;
-  color: #000;
-  border-color: #1f2937;
-}
-
-.time a[role="link"]:hover {
-  transform: translateY(-1px);
+.time a + p + i {
+    right: 8rem;
+    top: 22rem;
 }
