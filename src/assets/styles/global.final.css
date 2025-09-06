@@ -1,0 +1,144 @@
+/* =========================
+   THEME TOKENS — LIGHT (DEFAULT)
+   ========================= */
+:root {
+  /* warna utama */
+  --primary-font-color: #212529;
+  --bg-color: #f8f9fa;
+
+  /* tipografi */
+  --fontSize-heading-lg: 3rem;
+  --fontSize-heading-base: 2.8rem;
+  --fontSize-text-base: 1rem;
+
+  /* font family */
+  --sacramento: Sacramento, cursive;
+  --arabic: 'Noto Naskh Arabic', serif;
+
+  /* efek/animasi */
+  --shadow-md: 0 0 10px rgba(0, 0, 0, 0.3);
+  --transition-small: all .3s ease;
+
+  /* token tambahan agar komponen ikut tema */
+  --surface: #ffffff;        /* kartu/panel */
+  --muted: #6c757d;          /* teks sekunder */
+  --border: #e5e7eb;         /* garis/border */
+  --accent: #0ea5e9;         /* tautan/aksen */
+  --overlay: rgba(0,0,0,0.5);/* overlay gambar/hero di light */
+}
+
+/* =========================
+   THEME TOKENS — DARK (OVERRIDE)
+   Switch via <html data-theme="dark">
+   ========================= */
+[data-theme="dark"] {
+  --bg-color: #000000;
+  --primary-font-color: #ffffff;
+
+  --surface: #0b0b0b;
+  --muted: #c7c7c7;
+  --border: #1f2937;
+  --accent: #38bdf8;
+  --overlay: rgba(255,255,255,0.08);
+
+  --shadow-md: 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Optional: follow system when no manual theme is set */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg-color: #000000;
+    --primary-font-color: #ffffff;
+    --surface: #0b0b0b;
+    --muted: #c7c7c7;
+    --border: #1f2937;
+    --accent: #38bdf8;
+    --overlay: rgba(255,255,255,0.08);
+    --shadow-md: 0 0 12px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* =========================
+   BASE / RESET
+   ========================= */
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--primary-font-color);
+  background-color: var(--bg-color);
+  overflow-y: hidden;
+  transition: background-color .2s ease, color .2s ease; /* smooth switching */
+}
+
+body.active { overflow-y: auto; }
+body::-webkit-scrollbar { display: none; }
+
+p { line-height: 1.7rem; }
+
+/* =========================
+   THEME TOGGLE BUTTON (floating)
+   ========================= */
+.theme-toggle {
+  position: fixed; right: 1rem; top: 1rem;
+  z-index: 10000;
+  background: var(--surface);
+  color: var(--primary-font-color);
+  border: 1px solid var(--border);
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+.theme-toggle:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+/* =========================
+   AUDIO BUTTON (fixed & themed)
+   ========================= */
+.audio { position: static !important; }
+
+.audio button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--surface);
+  color: var(--primary-font-color);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed !important;   /* anchors to viewport */
+  inset: auto 1rem 1rem auto;   /* bottom-right */
+  z-index: 10000;
+  cursor: pointer;
+  transform: translateX(200%);
+  transition: 1.5s transform ease, background-color .2s ease, color .2s ease;
+}
+
+.audio button.show { transform: translateX(0); }
+.audio button.active { animation: rotate 3s linear infinite; }
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+@keyframes rotate {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes upAndDown {
+  0%, 100% { transform: translateY(-0.8rem); }
+  50%      { transform: translateY(0.8rem); }
+}
