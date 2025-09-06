@@ -2,34 +2,28 @@
    THEME TOKENS — LIGHT (DEFAULT)
    ========================= */
 :root {
-  /* warna utama */
   --primary-font-color: #212529;
   --bg-color: #f8f9fa;
 
-  /* tipografi */
   --fontSize-heading-lg: 3rem;
   --fontSize-heading-base: 2.8rem;
   --fontSize-text-base: 1rem;
 
-  /* font family */
   --sacramento: Sacramento, cursive;
   --arabic: 'Noto Naskh Arabic', serif;
 
-  /* efek/animasi */
   --shadow-md: 0 0 10px rgba(0, 0, 0, 0.3);
   --transition-small: all .3s ease;
 
-  /* token tambahan agar komponen ikut tema */
-  --surface: #ffffff;        /* kartu/panel */
-  --muted: #6c757d;          /* teks sekunder */
-  --border: #e5e7eb;         /* garis/border */
-  --accent: #0ea5e9;         /* tautan/aksen */
-  --overlay: rgba(0,0,0,0.5);/* overlay gambar/hero di light */
+  --surface: #ffffff;
+  --muted: #6c757d;
+  --border: #e5e7eb;
+  --accent: #0ea5e9;
+  --overlay: rgba(0,0,0,0.5);
 }
 
 /* =========================
    THEME TOKENS — DARK (OVERRIDE)
-   Switch via <html data-theme="dark">
    ========================= */
 [data-theme="dark"] {
   --bg-color: #000000;
@@ -80,7 +74,6 @@ body {
   color: var(--primary-font-color);
   background-color: var(--bg-color);
   overflow-y: hidden;
-  transition: background-color .2s ease, color .2s ease; /* smooth switching */
 }
 
 body.active { overflow-y: auto; }
@@ -89,25 +82,38 @@ body::-webkit-scrollbar { display: none; }
 p { line-height: 1.7rem; }
 
 /* =========================
-   THEME TOGGLE BUTTON (floating)
+   WRAPPER UNTUK TOGGLE + AUDIO
+   ========================= */
+.theme-audio-wrapper {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 10000;
+}
+
+/* =========================
+   THEME TOGGLE BUTTON
    ========================= */
 .theme-toggle {
-  position: fixed; right: 1rem; top: 1rem;
-  z-index: 10000;
   background: var(--surface);
   color: var(--primary-font-color);
   border: 1px solid var(--border);
   padding: .5rem .75rem;
   border-radius: .5rem;
   cursor: pointer;
+  transition: var(--transition-small);
 }
-.theme-toggle:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
 
 /* =========================
-   AUDIO BUTTON (fixed & themed)
+   AUDIO BUTTON
    ========================= */
-.audio { position: static !important; }
-
 .audio button {
   width: 2rem;
   height: 2rem;
@@ -119,9 +125,6 @@ p { line-height: 1.7rem; }
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed !important;   /* anchors to viewport */
-  inset: auto 1rem 1rem auto;   /* bottom-right */
-  z-index: 10000;
   cursor: pointer;
   transform: translateX(200%);
   transition: 1.5s transform ease, background-color .2s ease, color .2s ease;
@@ -134,11 +137,11 @@ p { line-height: 1.7rem; }
    ANIMATIONS
    ========================= */
 @keyframes rotate {
-  0%   { transform: rotate(0deg); }
+  0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
 @keyframes upAndDown {
   0%, 100% { transform: translateY(-0.8rem); }
-  50%      { transform: translateY(0.8rem); }
+  50% { transform: translateY(0.8rem); }
 }
