@@ -1,6 +1,8 @@
 import {data} from "../assets/data/data.js";
 import {monthNameToNumber} from "../utils/helper.js";
 
+let intervalId;
+
 export const home = () => {
     const homeContainer = document.querySelector('.home');
     const [_, figureElement, timeElement, homeTime, calendarAnchor] = homeContainer.children;
@@ -59,7 +61,7 @@ export const home = () => {
         const endTime = new Date(`${String(year)}-${String(monthNameToNumber(month)).padStart(2, '0')}-${String(date).padStart(2, '0')}T00:00:00`);
 
         updateCountdown(endTime, homeTime);
-        setInterval(() => updateCountdown(endTime, homeTime), 1000);
+        intervalId = setInterval(() => updateCountdown(endTime, homeTime), 1000);
     };
 
     const initializeHome = () => {
