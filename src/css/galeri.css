@@ -15,7 +15,8 @@
     position: relative;
 }
 
-.galeri .container h2, .galeri div:nth-of-type(2) h2 {
+.galeri .container h2,
+.galeri div:nth-of-type(2) h2 {
     font-family: var(--sacramento);
     font-size: var(--fontSize-heading-base);
     font-weight: 400;
@@ -66,7 +67,8 @@
     cursor: pointer;
 }
 
-.galeri .container ul li:hover, .galeri .container ul li.active {
+.galeri .container ul li:hover,
+.galeri .container ul li.active {
     background-color: #fff;
 }
 
@@ -94,19 +96,26 @@
     right: 2rem;
 }
 
+/* tombol lihat semua foto */
 .galeri .container button:nth-of-type(3) {
     padding: 0.5rem 1rem;
-    background-color: #fff;
-    border: 1px solid #000;
+    background-color: #000;   /* light: hitam */
+    color: #fff;
+    border: 1px solid var(--border);
     border-radius: 20px;
     margin-top: 1rem;
     transition: var(--transition-small);
 }
 
 .galeri .container button:nth-of-type(3):hover {
-    color: #fff;
-    background-color: #000;
-    cursor: pointer;
+    transform: translateY(-1px);
+}
+
+/* dark override */
+[data-theme="dark"] .galeri .container button:nth-of-type(3) {
+    background-color: #fff;   /* dark: putih */
+    color: #000;
+    border-color: #1f2937;
 }
 
 .galeri div:nth-of-type(2) {
@@ -144,9 +153,9 @@
 }
 
 .galeri div:nth-of-type(2) button {
-    padding:0;
+    padding: 0;
     font-size: 2rem;
-    background:none;
+    background: none;
     border: none;
     cursor: pointer;
     position: absolute;
@@ -156,7 +165,7 @@
 }
 
 .galeri div:nth-of-type(2) button:hover i {
-    text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .galeri div:nth-of-type(2).active {
@@ -165,27 +174,6 @@
 }
 
 .galeri > i {
-    top:2rem;
+    top: 2rem;
     left: 10rem;
 }
-
-.galeri .container,
-.galeri > div {
-  background: var(--surface);
-  color: var(--primary-font-color);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-md);
-}
-
-/* tombol navigasi */
-.galeri .container > button,
-.galeri > div > button {
-  background: var(--accent);
-  color: #fff;
-  border: 1px solid var(--border);
-  transition: var(--transition-small);
-}
-[data-theme="dark"] .galeri .container > button,
-[data-theme="dark"] .galeri > div > button { background: #1f8ad6; }
-.galeri .container > button:hover,
-.galeri > div > button:hover { transform: translateY(-1px); }
