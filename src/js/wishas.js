@@ -34,7 +34,7 @@ export const wishas = () => {
 
         containerBank.querySelectorAll('button').forEach((button) => {
             button.addEventListener('click', async (e) => {
-                const rekening = e.target.dataset.rekening;
+                const rekening = e.target.dataset.rekening.replace(/\s+/g, '');
                 try {
                     await navigator.clipboard.writeText(rekening);
                     button.textContent = 'Berhasil menyalin';
