@@ -37,7 +37,7 @@ export const data = {
             date: '21',
             day: 'Minggu',
             hours: {
-                start: '11.00',
+                start: '10.00',
                 finish: 'Selesai'
             }
         },
@@ -77,13 +77,13 @@ export const data = {
             id: 1,
             name: 'Dwi Wasono',
             icon: './src/assets/images/bca.png',
-            rekening: '12345678'
+            rekening: '123456789'
         },
         {
             id: 2,
             name: 'Ayu Rohmana Ainun',
             icon: './src/assets/images/bri.png',
-            rekening: '12345678'
+            rekening: '7610 0102 2088 535'
         },
     ],
 
