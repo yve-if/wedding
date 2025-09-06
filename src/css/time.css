@@ -11,6 +11,7 @@
 }
 
 .time h2 {
+  font-family: var(--sacramento);
   font-size: var(--fontSize-heading-base);
   margin-bottom: 1rem;
 }
