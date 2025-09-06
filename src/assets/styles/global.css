@@ -1,49 +1,61 @@
+/* ===== THEME TOKENS: Light (default) ===== */
 :root {
-    --primary-font-color: #212529;
-    --bg-color: #f8f9fa;
+  /* warna utama */
+  --primary-font-color: #212529;
+  --bg-color: #f8f9fa;
 
-    --fontSize-heading-lg: 3rem;
-    --fontSize-heading-base: 2.8rem;
-    --fontSize-text-base: 1rem;
+  /* tipografi */
+  --fontSize-heading-lg: 3rem;
+  --fontSize-heading-base: 2.8rem;
+  --fontSize-text-base: 1rem;
 
-    --sacramento: Sacramento, cursive;
-    --arabic: 'Noto Naskh Arabic', serif;
+  /* font family */
+  --sacramento: Sacramento, cursive;
+  --arabic: 'Noto Naskh Arabic', serif;
 
-    --shadow-md: 0 0 10px rgba(0, 0, 0, 0.3);
+  /* efek/animasi */
+  --shadow-md: 0 0 10px rgba(0, 0, 0, 0.3);
+  --transition-small: all .3s ease;
 
-    --transition-small: all .3s ease;
+  /* token tambahan agar komponen ikut tema */
+  --surface: #ffffff;        /* kartu/panel */
+  --muted: #6c757d;          /* teks sekunder */
+  --border: #e5e7eb;         /* garis/border */
+  --accent: #0ea5e9;         /* tautan/aksen */
+  --overlay: rgba(0,0,0,0.5);/* overlay gambar/hero di light */
+}
+
+/* ===== THEME TOKENS: Dark (override) ===== */
+[data-theme="dark"] {
+  --bg-color: #000000;
+  --primary-font-color: #ffffff;
+
+  --surface: #0b0b0b;
+  --muted: #c7c7c7;
+  --border: #1f2937;
+  --accent: #38bdf8;
+  --overlay: rgba(255,255,255,0.08);
+
+  --shadow-md: 0 0 12px rgba(0, 0, 0, 0.6);
 }
 
 html {
-    scroll-behavior: smooth;
-    scrollbar-width: none !important;
+  scroll-behavior: smooth;
+  scrollbar-width: none !important;
 }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    outline: none;
-}
+* { margin:0; padding:0; box-sizing:border-box; text-decoration:none; outline:none; }
 
 body {
-    font-family: 'Josefin Sans', sans-serif;
-    color: var(--primary-font-color);
-    background-color: var(--bg-color);
-    overflow-y: hidden;
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--primary-font-color);
+  background-color: var(--bg-color);
+  overflow-y: hidden;
+  transition: background-color .2s ease, color .2s ease; /* biar switching halus */
 }
+body.active { overflow-y: auto; }
+body::-webkit-scrollbar { display: none; }
 
-body.active {
-    overflow-y: auto;
-
-}
-body::-webkit-scrollbar {
-    display: none;
-}
-
-p {
-    line-height: 1.7rem;
+p { line-height: 1.7rem; }
 }
 
 .audio button {
