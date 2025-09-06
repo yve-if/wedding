@@ -140,3 +140,7 @@
 .hadist svg:nth-of-type(2){
     bottom: -15rem;
 }
+
+.bride { color: var(--primary-font-color); }
+.bride p { color: var(--muted); }
+.bride i[class^="bx"] { color: var(--primary-font-color); }
