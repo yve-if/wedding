@@ -48,18 +48,18 @@
     margin-bottom: 1rem;
 }
 
-/* tombol pada kartu Love Gift: LIGHT hitam, DARK putih */
+/* tombol Love Gift: LIGHT hitam, DARK putih */
 .wishas div:nth-of-type(1) > div figure button {
     padding: 0.4rem 1rem;
     border: 1px solid var(--border);
     border-radius: 10px;
     cursor: pointer;
     transition: var(--transition-small);
-    background: #000;  /* light */
+    background: #000;
     color: #fff;
 }
 [data-theme="dark"] .wishas div:nth-of-type(1) > div figure button {
-    background: #fff;  /* dark */
+    background: #fff;
     color: #000;
     border-color: #1f2937;
 }
@@ -115,8 +115,8 @@
 /* tombol submit: LIGHT hitam, DARK putih */
 .wishas div:nth-of-type(2) > form button {
     width: 100%;
-    color: #fff;            /* light text */
-    background-color: #000; /* light bg */
+    color: #fff;
+    background-color: #000;
     padding: 0.6rem 0;
     border-radius: 5px;
     margin-top: 1rem;
@@ -127,28 +127,26 @@
 .wishas div:nth-of-type(2) > form button:hover { transform: translateY(-1px); }
 
 [data-theme="dark"] .wishas div:nth-of-type(2) > form button {
-    background-color: #fff; /* dark bg */
-    color: #000;            /* dark text */
+    background-color: #fff;
+    color: #000;
     border-color: #1f2937;
 }
 
-/* ---- List ucapan ---- */
+/* ---- List ucapan (tanpa box di item) ---- */
 .wishas div:nth-of-type(3) {
     margin-top: 2rem;
-    border-radius: 15px;
     padding: 2rem 4rem;
-    background: var(--surface);
+    /* hilangkan latar/border/shadow biar bersih */
+    background: none;
+    border: none;
+    box-shadow: none;
     color: var(--primary-font-color);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-md);
 }
 
 .wishas div:nth-of-type(3) ul {
     margin-top: 1.4rem;
     width: 100%;
     display: flex;
-    align-items: start;
-    justify-content: start;
     flex-direction: column;
     gap: 1rem;
     min-height: 26rem;
@@ -159,8 +157,10 @@
 .wishas div:nth-of-type(3) ul li {
     display: flex;
     align-items: start;
-    justify-content: start;
     gap: 1rem;
+    background: none;
+    border: none;
+    box-shadow: none;
 }
 
 .wishas div:nth-of-type(3) ul li div:nth-of-type(1){
@@ -171,16 +171,16 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: #fff; /* biarkan putih agar inisial/ikon kontras */
-    /* jika mau ada latar, boleh tambahkan:
-       background: var(--accent);
-    */
+    color: #fff;
+    background: var(--accent); /* avatar tetap ada warna */
 }
 
 .wishas div:nth-of-type(3) ul li div:nth-of-type(2){
     margin: 0.4rem 0 0;
     padding: 0;
     text-align: start;
+    background: none;
+    border: none;
     box-shadow: none;
 }
 
@@ -228,7 +228,7 @@
     background-color: rgba(255,255,255,0.08);
 }
 
-/* tombol prev/next (outline, mengikuti tema) */
+/* tombol prev/next pager */
 .wishas div:nth-of-type(3) .button-grup  button {
     padding: 0.5rem 1rem;
     border: none;
