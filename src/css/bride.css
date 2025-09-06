@@ -47,9 +47,10 @@
 }
 
 .bride .bride_couple li figure figcaption {
-    font-size: var(--fontSize-heading-base);
+    font-size: clamp(1.2rem, 5vw, 2.5rem);
     margin: 1rem 0;
     font-family: var(--sacramento);
+    white-space: nowrap;   /* biar tetap satu baris */
 }
 
 .bride .bride_couple span {
