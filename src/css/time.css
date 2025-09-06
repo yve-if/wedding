@@ -48,3 +48,21 @@
     right: 8rem;
     top: 22rem;
 }
+
+/* kartu waktu */
+.time > div > div {
+  background: var(--surface);
+  color: var(--primary-font-color);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+/* tombol/link peta */
+.time a[role="link"] {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--border);
+  transition: var(--transition-small);
+}
+[data-theme="dark"] .time a[role="link"] { background: #1f8ad6; }
+.time a[role="link"]:hover { transform: translateY(-1px); }
