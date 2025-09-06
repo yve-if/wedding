@@ -53,6 +53,13 @@
     white-space: nowrap;   /* biar tetap satu baris */
 }
 
+.bride .bride_couple li p {
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* lebih kecil */
+    font-family: var(--main-font, sans-serif); 
+    line-height: 1.5;
+    margin: 0.3rem 0;
+}
+
 .bride .bride_couple span {
     font-size: 3.4rem;
     font-family: var(--sacramento);
