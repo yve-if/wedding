@@ -34,6 +34,10 @@ body {
     overflow-y: hidden;
 }
 
+body.active {
+    overflow-y: auto;
+
+}
 body::-webkit-scrollbar {
     display: none;
 }
