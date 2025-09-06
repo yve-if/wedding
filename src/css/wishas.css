@@ -210,3 +210,30 @@
     right: 0;
     bottom: -15rem;
 }
+
+/* form fields */
+.wishas form input,
+.wishas form select,
+.wishas form textarea {
+  background: var(--surface);
+  color: var(--primary-font-color);
+  border: 1px solid var(--border);
+}
+.wishas form input::placeholder,
+.wishas form textarea::placeholder { color: var(--muted); }
+
+/* tombol submit */
+.wishas form button,
+.button-grup button {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--border);
+  transition: var(--transition-small);
+}
+[data-theme="dark"] .wishas form button,
+[data-theme="dark"] .button-grup button { background: #1f8ad6; }
+.wishas form button:hover,
+.button-grup button:hover { transform: translateY(-1px); }
+
+/* wave svg */
+.wishas svg path { fill: var(--bg-color); }
