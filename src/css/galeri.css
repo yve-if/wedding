@@ -5,13 +5,18 @@
     padding: 4rem 8rem 12rem;
     margin-top: -6rem;
     position: relative;
+    background: var(--bg-color);
+    color: var(--primary-font-color);
 }
 
 .galeri .container {
     width: 100%;
     padding: 0 1.5rem 2rem;
     border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 -1px 1px rgba(0, 0, 0, 0.1);
+    background: var(--surface);               /* elevasi: tidak hitam pekat */
+    color: var(--primary-font-color);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
     position: relative;
 }
 
@@ -23,6 +28,7 @@
     padding: 2rem 1rem;
 }
 
+/* area gambar carousel */
 .galeri .container figure {
     width: 100%;
     margin: 0 auto;
@@ -32,11 +38,8 @@
     overflow-x: auto;
     scrollbar-width: none;
 }
-
 .galeri .container figure::-webkit-scrollbar,
-.galeri div:nth-of-type(2)::-webkit-scrollbar {
-    display: none;
-}
+.galeri div:nth-of-type(2)::-webkit-scrollbar { display: none; }
 
 .galeri .container figure img {
     width: 100%;
@@ -46,6 +49,7 @@
     transition: var(--transition-small);
 }
 
+/* indikator pagination */
 .galeri .container ul {
     padding: 0.5rem;
     display: flex;
@@ -57,77 +61,84 @@
     right: 0;
     bottom: 5.6rem;
 }
-
 .galeri .container ul li {
     width: 1.8rem;
     height: 0.25rem;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.35);    /* LIGHT base */
     border-radius: 1px;
     list-style-type: none;
     cursor: pointer;
+    transition: var(--transition-small);
 }
-
 .galeri .container ul li:hover,
-.galeri .container ul li.active {
-    background-color: #fff;
+.galeri .container ul li.active { background-color: #000; }  /* LIGHT hover/active */
+
+[data-theme="dark"] .galeri .container ul li {
+    background-color: rgba(255, 255, 255, 0.45);             /* DARK base */
+}
+[data-theme="dark"] .galeri .container ul li:hover,
+[data-theme="dark"] .galeri .container ul li.active {
+    background-color: #fff;                                   /* DARK hover/active */
 }
 
+/* tombol navigasi panah */
 .galeri .container button:nth-of-type(1),
 .galeri .container button:nth-of-type(2) {
     font-size: 4rem;
-    color: rgba(255, 255, 255, 0.5);
     background: none;
     border: none;
     position: absolute;
     top: 24.6rem;
+    cursor: pointer;
+    transition: var(--transition-small);
+    color: rgba(0, 0, 0, 0.35);          /* LIGHT base */
 }
+.galeri .container button:nth-of-type(1) { left: 2rem; }
+.galeri .container button:nth-of-type(2) { right: 2rem; }
 
 .galeri .container button:nth-of-type(1) i:hover,
 .galeri .container button:nth-of-type(2) i:hover {
-    color: #fff;
-    cursor: pointer;
+    transform: translateY(-1px);
+    text-shadow: none;
+    color: #000;                         /* LIGHT hover */
 }
 
-.galeri .container button:nth-of-type(1) {
-    left: 2rem;
+[data-theme="dark"] .galeri .container button:nth-of-type(1),
+[data-theme="dark"] .galeri .container button:nth-of-type(2) {
+    color: rgba(255, 255, 255, 0.55);    /* DARK base */
+}
+[data-theme="dark"] .galeri .container button:nth-of-type(1) i:hover,
+[data-theme="dark"] .galeri .container button:nth-of-type(2) i:hover {
+    color: #fff;                         /* DARK hover */
 }
 
-.galeri .container button:nth-of-type(2) {
-    right: 2rem;
-}
-
-/* tombol lihat semua foto */
+/* tombol LIHAT SEMUA FOTO (light=hitam, dark=putih) */
 .galeri .container button:nth-of-type(3) {
     padding: 0.5rem 1rem;
-    background-color: #000;   /* light: hitam */
+    background-color: #000;   /* LIGHT */
     color: #fff;
     border: 1px solid var(--border);
     border-radius: 20px;
     margin-top: 1rem;
     transition: var(--transition-small);
 }
+.galeri .container button:nth-of-type(3):hover { transform: translateY(-1px); }
 
-.galeri .container button:nth-of-type(3):hover {
-    transform: translateY(-1px);
-}
-
-/* dark override */
 [data-theme="dark"] .galeri .container button:nth-of-type(3) {
-    background-color: #fff;   /* dark: putih */
+    background-color: #fff;   /* DARK */
     color: #000;
     border-color: #1f2937;
 }
 
+/* overlay full galeri (lihat semua) mengikuti tema */
 .galeri div:nth-of-type(2) {
     width: 100%;
     height: 100vh;
     padding: 2rem 8rem;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fff;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--bg-color);       /* was #fff -> ikut tema */
+    color: var(--primary-font-color);
     z-index: 99;
     overflow-y: auto;
     transition: all .3s ease;
@@ -136,8 +147,12 @@
     transform-origin: bottom;
 }
 
+/* grid isi overlay */
 .galeri div:nth-of-type(2) > div {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 -1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--primary-font-color);
     border-radius: 20px;
     padding: 2rem;
     margin-top: 1rem;
@@ -145,13 +160,13 @@
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 2rem;
 }
-
 .galeri div:nth-of-type(2) > div img {
     width: 100%;
     object-fit: cover;
     border-radius: 20px;
 }
 
+/* close button overlay */
 .galeri div:nth-of-type(2) button {
     padding: 0;
     font-size: 2rem;
@@ -162,10 +177,10 @@
     top: 1rem;
     right: 1rem;
     transition: var(--transition-small);
+    color: var(--primary-font-color);
 }
-
 .galeri div:nth-of-type(2) button:hover i {
-    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
 }
 
 .galeri div:nth-of-type(2).active {
