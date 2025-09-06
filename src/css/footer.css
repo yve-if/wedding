@@ -3,6 +3,7 @@ footer {
     width: 100%;
     padding: 4rem 8rem;
     text-align: center;
+    color: #fff;
 }
 
 footer h2 {
@@ -16,6 +17,7 @@ footer h4 {
     font-size: 1.6rem;
     font-family: var(--arabic);
     font-weight: 400;
+    color: #fff;
 }
 
 footer > div {
@@ -23,9 +25,10 @@ footer > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid #000;
+    border-top: 1px solid #fff;
     margin-top: 1rem;
     padding-top: 0.6rem;
+    color: #fff;
 }
 
 footer > div p {
@@ -40,6 +43,6 @@ footer > div a {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000;
+    color: #fff;
     font-size: 0.8rem;
 }
