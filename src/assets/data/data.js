@@ -83,7 +83,7 @@ export const data = {
             id: 2,
             name: 'Ayu Rohmana Ainun',
             icon: './src/assets/images/bri.png',
-            rekening: '7610 0102 2088 535'
+            rekening: '761001022088535'
         },
     ],
 
