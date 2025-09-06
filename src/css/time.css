@@ -13,6 +13,7 @@
 .time h2 {
   font-family: var(--sacramento);
   font-size: var(--fontSize-heading-base);
+  font-weight: 400;
   margin-bottom: 1rem;
 }
 
@@ -23,6 +24,9 @@
 
 /* kotak acara (akad, resepsi) */
 .time > div {
+  font-family: var(--sacramento);
+  font-size: var(--fontSize-heading-lg);
+  font-weight: 400;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
