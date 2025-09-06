@@ -5,14 +5,17 @@
     background-color: var(--bg-color);
     position: relative;
     text-align: center;
+    color: var(--primary-font-color);
 }
 
-.wishas div:nth-of-type(1) h2, .wishas div:nth-of-type(2) h2 {
+.wishas div:nth-of-type(1) h2,
+.wishas div:nth-of-type(2) h2 {
     font-size: var(--fontSize-heading-base);
     font-family: var(--sacramento);
     font-weight: 400;
 }
 
+/* ---- Love Gift cards row ---- */
 .wishas div:nth-of-type(1) > div {
     margin-top: 1rem;
     width: 100%;
@@ -27,7 +30,10 @@
     text-align: center;
     border-radius: 15px;
     padding: 1rem 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 -1px 1px rgba(0, 0, 0, 0.1);
+    background: var(--surface);
+    color: var(--primary-font-color);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
 }
 
 .wishas div:nth-of-type(1) > div figure img {
@@ -42,25 +48,34 @@
     margin-bottom: 1rem;
 }
 
+/* tombol pada kartu Love Gift: LIGHT hitam, DARK putih */
 .wishas div:nth-of-type(1) > div figure button {
     padding: 0.4rem 1rem;
-    border: 1px solid #000;
-    background-color: #fff;
+    border: 1px solid var(--border);
     border-radius: 10px;
     cursor: pointer;
     transition: var(--transition-small);
-}
-
-.wishas div:nth-of-type(1) > div figure button:hover {
-    background-color: #000;
+    background: #000;  /* light */
     color: #fff;
 }
+[data-theme="dark"] .wishas div:nth-of-type(1) > div figure button {
+    background: #fff;  /* dark */
+    color: #000;
+    border-color: #1f2937;
+}
+.wishas div:nth-of-type(1) > div figure button:hover {
+    transform: translateY(-1px);
+}
 
+/* ---- Form box (Ucapan & Doa) ---- */
 .wishas div:nth-of-type(2){
     margin-top: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 -1px 1px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     padding: 2rem 4rem 4rem;
+    background: var(--surface);
+    color: var(--primary-font-color);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
 }
 
 .wishas div:nth-of-type(2) > form {
@@ -84,29 +99,48 @@
     width: 100%;
     padding: 0.6rem 1rem;
     border-radius: 5px;
-    border: 1px solid #000;
+    background: var(--surface);
+    color: var(--primary-font-color);
+    border: 1px solid var(--border);
+}
+.wishas div:nth-of-type(2) > form input::placeholder,
+.wishas div:nth-of-type(2) > form textarea::placeholder {
+    color: var(--muted);
 }
 
 .wishas div:nth-of-type(2) > form textarea {
     min-height: 6rem;
 }
 
+/* tombol submit: LIGHT hitam, DARK putih */
 .wishas div:nth-of-type(2) > form button {
     width: 100%;
-    color: #fff;
-    background-color: #000;
+    color: #fff;            /* light text */
+    background-color: #000; /* light bg */
     padding: 0.6rem 0;
     border-radius: 5px;
     margin-top: 1rem;
-    border: none;
+    border: 1px solid var(--border);
     cursor: pointer;
+    transition: var(--transition-small);
+}
+.wishas div:nth-of-type(2) > form button:hover { transform: translateY(-1px); }
+
+[data-theme="dark"] .wishas div:nth-of-type(2) > form button {
+    background-color: #fff; /* dark bg */
+    color: #000;            /* dark text */
+    border-color: #1f2937;
 }
 
+/* ---- List ucapan ---- */
 .wishas div:nth-of-type(3) {
     margin-top: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 -1px 1px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     padding: 2rem 4rem;
+    background: var(--surface);
+    color: var(--primary-font-color);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
 }
 
 .wishas div:nth-of-type(3) ul {
@@ -137,7 +171,10 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: #fff;
+    color: #fff; /* biarkan putih agar inisial/ikon kontras */
+    /* jika mau ada latar, boleh tambahkan:
+       background: var(--accent);
+    */
 }
 
 .wishas div:nth-of-type(3) ul li div:nth-of-type(2){
@@ -156,6 +193,7 @@
     font-size: 0.6rem;
     font-weight: 300;
     line-height: 1rem;
+    color: var(--muted);
 }
 
 .wishas div:nth-of-type(3) ul li div:nth-of-type(2) p:nth-of-type(2){
@@ -164,37 +202,51 @@
     font-size: 0.8rem;
 }
 
+/* Pager di bawah list */
 .wishas div:nth-of-type(3) .button-grup {
     margin: 1rem auto 0;
-    border: 1px solid #000;
+    border: 1px solid var(--border);
     border-radius: 4px;
-    background-color: #fff;
+    background-color: var(--surface);
     width: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: var(--shadow-md);
 }
 
 .wishas div:nth-of-type(3) .button-grup > span {
-    background-color: #d5d2d2;
+    background-color: rgba(0,0,0,0.08);
     width: 2rem;
     height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--primary-font-color);
+}
+[data-theme="dark"] .wishas div:nth-of-type(3) .button-grup > span {
+    background-color: rgba(255,255,255,0.08);
 }
 
+/* tombol prev/next (outline, mengikuti tema) */
 .wishas div:nth-of-type(3) .button-grup  button {
     padding: 0.5rem 1rem;
     border: none;
-    background:none;
+    background: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
+    color: var(--primary-font-color);
+    transition: var(--transition-small);
+}
+.wishas div:nth-of-type(3) .button-grup  button:hover {
+    transform: translateY(-1px);
+    opacity: .9;
 }
 
+/* Waves ikut warna tema */
 .wishas svg:nth-of-type(1){
     position: absolute;
     z-index: -10;
@@ -202,7 +254,6 @@
     left: 0;
     right: 0;
 }
-
 .wishas svg:nth-of-type(2) {
     position: absolute;
     z-index: -10;
@@ -210,30 +261,4 @@
     right: 0;
     bottom: -15rem;
 }
-
-/* form fields */
-.wishas form input,
-.wishas form select,
-.wishas form textarea {
-  background: var(--surface);
-  color: var(--primary-font-color);
-  border: 1px solid var(--border);
-}
-.wishas form input::placeholder,
-.wishas form textarea::placeholder { color: var(--muted); }
-
-/* tombol submit */
-.wishas form button,
-.button-grup button {
-  background: var(--accent);
-  color: #fff;
-  border: 1px solid var(--border);
-  transition: var(--transition-small);
-}
-[data-theme="dark"] .wishas form button,
-[data-theme="dark"] .button-grup button { background: #1f8ad6; }
-.wishas form button:hover,
-.button-grup button:hover { transform: translateY(-1px); }
-
-/* wave svg */
 .wishas svg path { fill: var(--bg-color); }
