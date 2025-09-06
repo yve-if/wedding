@@ -17,7 +17,7 @@ export const home = () => {
     };
 
     const generateTimeContent = ({time}) => {
-        const {year, month, date, day} = time.marriage;
+        const {year, month, date, day} = time.reception;
         return `
         <time datetime="${year}-${String(monthNameToNumber(month)).padStart(2, '0')}-${String(date).padStart(2, '0')}">
             ${day}, ${date} ${month} ${year}
@@ -57,7 +57,7 @@ export const home = () => {
     };
 
     const startCountdown = (homeTime, timeData) => {
-        const {year, month, date} = timeData.marriage;
+        const {year, month, date} = timeData.reception;
         const endTime = new Date(`${String(year)}-${String(monthNameToNumber(month)).padStart(2, '0')}-${String(date).padStart(2, '0')}T00:00:00`);
 
         updateCountdown(endTime, homeTime);
