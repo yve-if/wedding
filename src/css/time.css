@@ -1,68 +1,77 @@
+/* =========================
+   TIME SECTION (LIGHT/DARK CLEAN)
+   ========================= */
+
 .time {
-    width: 100%;
-    min-height: 100vh;
-    text-align: center;
-    padding: 10rem 8rem;
-    position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--bg-color);
+  color: var(--primary-font-color);
 }
 
 .time h2 {
-    font-family: var(--sacramento);
-    font-size: var(--fontSize-heading-base);
-    font-weight: 400;
+  font-size: var(--fontSize-heading-base);
+  margin-bottom: 1rem;
 }
 
-.time div:nth-of-type(1) {
-    margin-top: 2rem;
+.time p {
+  margin-bottom: 1rem;
+  color: var(--muted);
 }
 
-.time div:nth-of-type(1) div h3 {
-    font-family: var(--sacramento);
-    font-size: var(--fontSize-heading-lg);
-    font-weight: 400;
+/* kotak acara (akad, resepsi) */
+.time > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
 }
 
-.time div:nth-of-type(1) div:nth-of-type(2){
-    margin-top: 2rem;
-}
-
-.time a {
-    padding: 0.5rem 1rem;
-    color: #fff;
-    font-size: 1rem;
-    background-color: #000;
-    margin: 2rem auto 1rem;
-    border-radius: 20px;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.time a i {
-    font-size: 1.2rem;
-}
-
-.time a + p + i {
-    right: 8rem;
-    top: 22rem;
-}
-
-/* kartu waktu */
 .time > div > div {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
   background: var(--surface);
   color: var(--primary-font-color);
-  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-small);
+}
+
+/* hilangkan hover “grid/zoom” bawaan */
+.time > div > div:hover {
+  transform: none;
   box-shadow: var(--shadow-md);
 }
 
-/* tombol/link peta */
+/* tombol link google maps */
 .time a[role="link"] {
-  background: var(--accent);
-  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
   border: 1px solid var(--border);
   transition: var(--transition-small);
+  text-decoration: none;
 }
-[data-theme="dark"] .time a[role="link"] { background: #1f8ad6; }
-.time a[role="link"]:hover { transform: translateY(-1px); }
+
+/* mode terang: hitam */
+.time a[role="link"] {
+  background: #000;
+  color: #fff;
+}
+.time a[role="link"] i { color: currentColor; }
+
+/* mode gelap: putih */
+[data-theme="dark"] .time a[role="link"] {
+  background: #fff;
+  color: #000;
+  border-color: #1f2937;
+}
+
+.time a[role="link"]:hover {
+  transform: translateY(-1px);
+}
