@@ -1,45 +1,57 @@
+/* Footer pakai token tema, tanpa ubah global.css */
 footer {
-    margin-top: 6rem;
-    width: 100%;
-    padding: 4rem 8rem;
-    text-align: center;
+  /* token lokal utk footer (default ikut tema global) */
+  --footer-bg: var(--bg-color);
+  --footer-text: var(--primary-font-color);
+
+  margin-top: 6rem;
+  width: 100%;
+  padding: 4rem 8rem;
+  text-align: center;
+
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  border-top: 1px solid currentColor; /* semula #000 */
+}
+
+/* Dark mode: nilai khusus footer */
+[data-theme="dark"] footer {
+  --footer-bg: #0d0d0d;
+  --footer-text: #f5f5f5;
 }
 
 footer h2 {
-    font-size: var(--fontSize-heading-base);
-    font-family: var(--sacramento);
-    font-weight: 400;
-    margin-top: 1rem;
+  font-size: var(--fontSize-heading-base);
+  font-family: var(--sacramento);
+  font-weight: 400;
+  margin-top: 1rem;
 }
 
 footer h4 {
-    font-size: 1.6rem;
-    font-family: var(--arabic);
-    font-weight: 400;
+  font-size: 1.6rem;
+  font-family: var(--arabic);
+  font-weight: 400;
 }
 
 footer > div {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid #000;
-    margin-top: 1rem;
-    padding-top: 0.6rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid currentColor; /* semula #000 */
+  margin-top: 1rem;
+  padding-top: 0.6rem;
 }
 
-footer > div p {
-    font-size: 0.6rem;
-}
+footer > div p { font-size: 0.6rem; }
+footer > div p span { font-weight: bold; }
 
-footer > div p span {
-    font-weight: bold;
-}
-
+/* Link & ikon mewarisi warna tema */
 footer > div a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
-    font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;           /* semula #000 */
+  font-size: 0.8rem;
 }
+footer > div a i { color: inherit; }
