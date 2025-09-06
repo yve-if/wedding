@@ -106,3 +106,19 @@
     bottom: -14rem;
     z-index: -10;
 }
+
+/* tombol utama di section home */
+.home a[role="link"] {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--border);
+  transition: var(--transition-small);
+}
+[data-theme="dark"] .home a[role="link"] {
+  background: #1f8ad6; /* lebih pas di dark */
+}
+.home a[role="link"]:hover { transform: translateY(-1px); }
+
+/* wave svg ikut background tema */
+.home svg path { fill: var(--bg-color);
+}
