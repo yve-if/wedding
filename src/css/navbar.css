@@ -46,6 +46,6 @@ header nav a span {
 }
 
 header nav a:hover {
-    background-color: #000;
+    background-color: #fff;
     color: #fff;
 }
