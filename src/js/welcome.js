@@ -75,7 +75,7 @@ export const welcome = () => {
                 particleCount: 120,
                 spread: 80,
                 origin: { y: 0.6 },
-                colors: ['#ff69b4', '#ff1493', '#c71585', '#ffffff']
+                colors: ['#ff69b4', '#1E90FF', '#20B2AA', '#800080', '#ffffff']
             });
 
             let duration = 2000; // 2 detik
