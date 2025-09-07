@@ -1,54 +1,91 @@
 header {
-    width: 100%;
+  width: 100%;
 }
 
 header nav {
-    display: none;
-    width: 100%;
-    padding: 0 1.4rem;
-    background-color: var(--bg-color);
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: -100%;
-    z-index: 99;
-    transform: translateY(0);
-    transition: bottom 2s ease, transform 1s ease;
+  display: none;
+  width: 100%;
+  padding: 0 1.4rem;
+  background-color: var(--bg-color);
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  z-index: 99;
+  transform: translateY(0);
+  transition: bottom 2s ease, transform 1s ease;
 }
 
-header nav.active {
-    bottom: 0;
-}
+/* nav visible */
+header nav.active { bottom: 0; }
 
-header nav.scroll {
-    transform: translateY(100%);
-}
+/* hide on scroll down (existing behavior) */
+header nav.scroll { transform: translateY(100%); }
 
+/* ====== NAV BUTTON BASE ====== */
 header nav a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0.1rem;
-    width: 4rem;
-    height: 3rem;
-    color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.1rem;
+
+  width: 4rem;
+  height: 3rem;
+
+  background: var(--surface);
+  color: var(--primary-font-color);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  transition: var(--transition-small);
+  text-decoration: none;
 }
 
-header nav a i {
-    font-size: 1.2rem;
-}
+header nav a i { font-size: 1.2rem; }
+header nav a span { font-size: 0.6rem; }
 
-header nav a span {
-    font-size: 0.6rem;
-}
-
+/* hover halus, tanpa hardcode warna */
 header nav a:hover {
-    background-color: #000;
-    color: #fff;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
+/* ====== ACTIVE COLOR PER TAB (pakai variabel dari global.css) ====== */
+header nav a[href="#home"].active {
+  background: var(--tab-home);
+  color: var(--tab-home-text);
+  border-color: var(--border);
+}
+
+header nav a[href="#bride"].active {
+  background: var(--tab-bride);
+  color: var(--tab-bride-text);
+  border-color: var(--border);
+}
+
+header nav a[href="#time"].active {
+  background: var(--tab-time);
+  color: var(--tab-time-text);
+  border-color: var(--border);
+}
+
+header nav a[href="#galeri"].active {
+  background: var(--tab-galeri);
+  color: var(--tab-galeri-text);
+  border-color: var(--border);
+}
+
+header nav a[href="#wishas"].active {
+  background: var(--tab-wishas);
+  color: var(--tab-wishas-text);
+  border-color: var(--border);
+}
+
+/* optional: konsistensi warna ikon saat active */
+header nav a.active i { color: currentColor; }
+
+/* (Tetap) biar isi nav ikut tema kalau ada elemen lain */
 nav, nav * { color: var(--primary-font-color); }
-nav a:hover { opacity: .9; }
