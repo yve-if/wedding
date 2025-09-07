@@ -29,7 +29,7 @@ export const welcome = () => {
         } else {
             weddingToElement.innerHTML = `Kepada Yth Bapak/Ibu/Saudara/i<br><span>Teman-teman semua</span>`;
         }
-    }
+    };
 
     const initialAudio = () => {
         let isPlaying = false;
@@ -37,7 +37,6 @@ export const welcome = () => {
         audioMusic.innerHTML = `<source src=${data.audio} type="audio/mp3"/>`;
 
         audioButton.addEventListener('click', () => {
-
             if (isPlaying) {
                 addClassElement(audioButton, 'active');
                 removeClassElement(iconButton, 'bx-play-circle');
@@ -69,14 +68,37 @@ export const welcome = () => {
         setTimeout(() => {
             addClassElement(audioButton, 'active');
         }, 3000);
+
+        // === Confetti effect ===
+        if (typeof confetti === "function") {
+            confetti({
+                particleCount: 120,
+                spread: 80,
+                origin: { y: 0.6 },
+                colors: ['#ff69b4', '#ff1493', '#c71585', '#ffffff']
+            });
+
+            let duration = 2000; // 2 detik
+            let end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 8,
+                    spread: 70,
+                    origin: { x: Math.random(), y: Math.random() - 0.2 },
+                    colors: ['#ff69b4', '#ff1493', '#c71585']
+                });
+                if (Date.now() < end) requestAnimationFrame(frame);
+            })();
+        }
     });
 
     const initializeWelcome = () => {
         figureElement.innerHTML = generateFigureContent(data.bride);
         generateParameterContent();
         addClassElement(welcomeElement, 'active');
-    }
+    };
 
     initializeWelcome();
     initialAudio();
-}
+};
