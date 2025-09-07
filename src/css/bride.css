@@ -141,6 +141,9 @@
     bottom: -15rem;
 }
 
+.hadist svg path { fill: var(--wave-color); 
+}
+
 .bride { color: var(--primary-font-color); }
 .bride p { color: var(--muted); }
 .bride i[class^="bx"] { color: var(--primary-font-color); }
