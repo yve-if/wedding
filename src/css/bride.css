@@ -55,7 +55,7 @@
 
 .bride .bride_couple li p {
     font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* lebih kecil */
-    font-family: var(--sacramento);
+    font-family: 'Josefin Sans', sans-serif;
     color: var(--primary-font-color);
     line-height: 1.5;
     margin: 0.3rem 0;
