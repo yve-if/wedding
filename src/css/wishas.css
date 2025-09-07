@@ -261,4 +261,4 @@
     right: 0;
     bottom: -15rem;
 }
-.wishas svg path { fill: var(--bg-color); }
+.wishas svg path { fill: var(--wave-color); }
