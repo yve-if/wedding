@@ -76,14 +76,14 @@ export const data = {
         {
             id: 1,
             name: 'Dwi Wasono',
-            icon: './src/assets/images/bca.png',
-            rekening: '123456789'
+            icon: './src/assets/images/bri.png',
+            rekening: '057901066523502'
         },
         {
             id: 2,
             name: 'Ayu Rohmana Ainun',
-            icon: './src/assets/images/bri.png',
-            rekening: '761001022088535'
+            icon: './src/assets/images/mandiri.png',
+            rekening: '1420017138362'
         },
     ],
 
