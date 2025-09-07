@@ -69,7 +69,7 @@
 
 .bride i, .hadist i, .time a + p + i, .galeri > i {
     font-size: 3rem;
-    color: #908d8d;
+    color: var(--primary-font-color);
     position: absolute;
     z-index: 10;
     animation: upAndDown 3s infinite;
