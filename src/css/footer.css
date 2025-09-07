@@ -55,3 +55,4 @@ footer > div a {
   font-size: 0.8rem;
 }
 footer > div a i { color: inherit; }
+footer svg path { fill: var(--wave-color); }
