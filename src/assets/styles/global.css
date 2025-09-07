@@ -27,29 +27,6 @@
 
   /* Wave */
   --wave-color: #ffffff;
-
-  /* =========================
-     NAV TAB COLORS — LIGHT
-     ========================= */
-  /* HOME: putih */
-  --tab-home: #ffffff;
-  --tab-home-text: #000000;
-
-  /* MEMPELAI (bride): hitam */
-  --tab-bride: #000000;
-  --tab-bride-text: #ffffff;
-
-  /* TANGGAL (time): biru muda contoh */
-  --tab-time: #e6f2ff;
-  --tab-time-text: #0f172a;
-
-  /* GALERI: krem contoh */
-  --tab-galeri: #f7efe5;
-  --tab-galeri-text: #1f2937;
-
-  /* UCAPAN (wishas): hijau muda contoh */
-  --tab-wishas: #e8f7ef;
-  --tab-wishas-text: #0f172a;
 }
 
 /* =========================
@@ -69,29 +46,6 @@
 
   /* Wave */
   --wave-color: #ffffff;
-
-  /* =========================
-     NAV TAB COLORS — DARK
-     ========================= */
-  /* HOME: abu-abu */
-  --tab-home: #888888;
-  --tab-home-text: #000000;
-
-  /* MEMPELAI (bride): hitam */
-  --tab-bride: #000000;
-  --tab-bride-text: #ffffff;
-
-  /* TANGGAL: biru gelap lembut */
-  --tab-time: #1f2a3a;
-  --tab-time-text: #e5e7eb;
-
-  /* GALERI: coklat tua lembut */
-  --tab-galeri: #3a2f2a;
-  --tab-galeri-text: #f8f9fa;
-
-  /* UCAPAN: hijau tua lembut */
-  --tab-wishas: #1f3a2a;
-  --tab-wishas-text: #e5e7eb;
 }
 
 /* Optional: follow system when no manual theme is set */
