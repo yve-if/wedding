@@ -86,7 +86,7 @@ export const welcome = () => {
                     particleCount: 8,
                     spread: 70,
                     origin: { x: Math.random(), y: Math.random() - 0.2 },
-                    colors: ['#ff69b4', '#ff1493', '#c71585']
+                    colors: ['#ff69b4', '#1E90FF', '#20B2AA', '#800080', '#ffffff']
                 });
                 if (Date.now() < end) requestAnimationFrame(frame);
             })();
