@@ -24,6 +24,7 @@
   /* FAB spacing */
   --fab-gap: 0.6rem;                      /* jarak antar tombol */
   --fab-bottom: clamp(5rem, 12vh, 7rem);  /* jarak dari bawah, responsif */
+  --wave-color: #000000;
 }
 
 /* =========================
@@ -40,6 +41,7 @@
   --overlay: rgba(255,255,255,0.08);
 
   --shadow-md: 0 0 12px rgba(0, 0, 0, 0.6);
+  --wave-color: #888888;
 }
 
 /* Optional: follow system when no manual theme is set */
