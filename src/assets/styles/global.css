@@ -20,6 +20,10 @@
   --border: #e5e7eb;
   --accent: #0ea5e9;
   --overlay: rgba(0,0,0,0.5);
+
+  /* FAB spacing */
+  --fab-gap: 0.6rem;                      /* jarak antar tombol */
+  --fab-bottom: clamp(5rem, 12vh, 7rem);  /* jarak dari bawah, responsif */
 }
 
 /* =========================
@@ -73,10 +77,10 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   color: var(--primary-font-color);
   background-color: var(--bg-color);
-  overflow-y: hidden;
+  overflow-y: hidden;        /* welcome screen terkunci */
 }
 
-body.active { overflow-y: auto; }
+body.active { overflow-y: auto; } /* setelah dibuka undangan */
 body::-webkit-scrollbar { display: none; }
 
 p { line-height: 1.7rem; }
@@ -84,12 +88,6 @@ p { line-height: 1.7rem; }
 /* =========================
    WRAPPER UNTUK TOGGLE + AUDIO (naik sedikit)
    ========================= */
-:root {
-  /* kamu boleh atur-atur angka ini nanti */
-  --fab-gap: 0.6rem;                 /* jarak antar tombol */
-  --fab-bottom: clamp(5rem, 12vh, 7rem); /* jarak dari bawah, responsif */
-}
-
 .theme-audio-wrapper {
   position: fixed;
   right: 1rem;
@@ -102,13 +100,13 @@ p { line-height: 1.7rem; }
 
 /* Desktop/layar lebar: turunin dikit supaya nggak terlalu tinggi */
 @media (min-width: 1024px) {
-  .theme-audio-wrapper {
-    bottom: 2rem;
-  }
+  .theme-audio-wrapper { bottom: 2rem; }
 }
 
 /* =========================
    THEME TOGGLE BUTTON
+   - disembunyikan saat welcome (sebelum body.active)
+   - muncul geser seperti tombol audio
    ========================= */
 .theme-toggle {
   background: var(--surface);
@@ -117,11 +115,22 @@ p { line-height: 1.7rem; }
   padding: .5rem .75rem;
   border-radius: .5rem;
   cursor: pointer;
-  transition: var(--transition-small);
+  box-shadow: none;
+  /* animasi slide in seperti audio */
+  transform: translateX(200%);   /* sembunyi di kanan saat welcome */
+  transition: 1.5s transform ease, background-color .2s ease, color .2s ease, box-shadow .2s ease, border-color .2s ease;
+  pointer-events: none;          /* tidak bisa diklik saat hidden */
 }
 .theme-toggle:hover {
-  transform: translateY(-1px);
+  transform: translateX(0) translateY(-1px);
   box-shadow: var(--shadow-md);
+}
+
+/* muncul setelah undangan dibuka */
+body.active .theme-toggle,
+.theme-toggle.show {             /* alternatif kalau kamu pakai .show via JS */
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
 /* =========================
@@ -139,7 +148,7 @@ p { line-height: 1.7rem; }
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transform: translateX(200%);
+  transform: translateX(200%);   /* default tersembunyi */
   transition: 1.5s transform ease, background-color .2s ease, color .2s ease;
 }
 
