@@ -24,9 +24,13 @@
   /* FAB spacing */
   --fab-gap: 0.6rem;                      /* jarak antar tombol */
   --fab-bottom: clamp(5rem, 12vh, 7rem);  /* jarak dari bawah, responsif */
-  --wave-color: #000000;
-}
 
+  /* Wave */
+  --wave-color: #000000;
+
+  /* =========================
+     NAV TAB COLORS — LIGHT
+     ========================= */
   /* HOME: putih */
   --tab-home: #ffffff;
   --tab-home-text: #000000;
@@ -35,15 +39,15 @@
   --tab-bride: #000000;
   --tab-bride-text: #ffffff;
 
-  /* TANGGAL (time): contoh biru muda */
+  /* TANGGAL (time): biru muda contoh */
   --tab-time: #e6f2ff;
   --tab-time-text: #0f172a;
 
-  /* GALERI: contoh krem */
+  /* GALERI: krem contoh */
   --tab-galeri: #f7efe5;
   --tab-galeri-text: #1f2937;
 
-  /* UCAPAN (wishas): contoh hijau muda */
+  /* UCAPAN (wishas): hijau muda contoh */
   --tab-wishas: #e8f7ef;
   --tab-wishas-text: #0f172a;
 }
@@ -62,9 +66,13 @@
   --overlay: rgba(255,255,255,0.08);
 
   --shadow-md: 0 0 12px rgba(0, 0, 0, 0.6);
-  --wave-color: #888888;
-}
 
+  /* Wave */
+  --wave-color: #888888;
+
+  /* =========================
+     NAV TAB COLORS — DARK
+     ========================= */
   /* HOME: abu-abu */
   --tab-home: #888888;
   --tab-home-text: #000000;
@@ -97,6 +105,10 @@
     --accent: #38bdf8;
     --overlay: rgba(255,255,255,0.08);
     --shadow-md: 0 0 12px rgba(0, 0, 0, 0.6);
+
+    --wave-color: #888888;
+
+    /* (opsional) bisa set default tab-color untuk mode ini juga */
   }
 }
 
