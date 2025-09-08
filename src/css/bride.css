@@ -146,5 +146,5 @@
 }
 
 .bride { color: var(--primary-font-color); }
-.bride p { color: var(--muted); }
+.bride p { color: var(--primary-font-color);
 .bride i[class^="bx"] { color: var(--primary-font-color); }
