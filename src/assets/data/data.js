@@ -11,7 +11,7 @@ export const data = {
         P: {
             id: 2,
             name: 'Ayu Rohmmana Ainun',
-            child: 'Putri ketiga',
+            child: 'Putri keempat',
             father: '(Alm) Slimin',
             mother: 'Suti Adi Utami',
             image: './src/assets/images/cewe.png'
